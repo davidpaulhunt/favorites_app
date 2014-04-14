@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	
+	<title></title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="application.css">
+</head>
+
+
+<body role="document">
+
+	<h1>
+		What are YOUR favorite Matt Damon movies??
+	</h1>
+
+
+	<div class="dropdown theme-dropdown clearfix">
+		<a id="dropdownMenu1" href="#" role="button" class="sr-only dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+			<li class="active" role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+			<li role="presentation" class="divider"></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+	</ul>
+</div>
+
+
+
+	<form action="/to_dos" method="post">
+		<input type="text" id="description" name="description">
+		<input type="submit">
+	</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="../bootstrap.min.js"></script>
+  <script src="../docs.min.js"></script>
+
+</body>
+</html>
+
+<!-- 
+
+These are html dox
+By using %= we assign the to_do to be displayed
+Using ruby to iterate in the erb coding
+
+-->
