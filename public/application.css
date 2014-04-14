@@ -1,6 +1,10 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  /*background: url('./mattdamon.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;*/
+  text-align: center;
 }
 
 .theme-dropdown .dropdown-menu {

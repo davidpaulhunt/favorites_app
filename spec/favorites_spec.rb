@@ -1,7 +1,7 @@
 require 'rspec'
 require './app.rb'
 
-describe Favorites do
+describe Favorite do
 	
 	it 'should have no favorites to start' do
 		Favorites.favorites.should be_empty

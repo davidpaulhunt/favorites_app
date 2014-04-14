@@ -1,18 +1,29 @@
 require 'sinatra'
 
+get "/error" do
+	"Error"
+	erb :"favorites/error"
+end
+
 get "/favorites" do
-	@favorites = Favorites.new
+	@favorites = Session.favorites
 	erb :"favorites/index"
 end
 
 get '/' do
-	"Hello World"
+	redirect "/favorites"
+end
+
+post "/favorites" do
+	text = params[:title]
+	Session.add_favorite(text)
+	redirect "/favorites"
 end
 
 
-class Favorites
+class Session
 	@@favorites = []
-	
+
 	def initialize
 	end
 
@@ -20,8 +31,8 @@ class Favorites
 		@@favorites
 	end
 
-	def self.add_favorite(favorite)
-		@@favorites << favorite
+	def self.add_favorite(title)
+		@@favorites << title
 	end
 
 end
