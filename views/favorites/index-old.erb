@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	
+	<title></title>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/bootstrap-theme.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="application.css">
+</head>
+
+
+<body>
+	
+
+	
+	<!-- 	<div class="alert alert-warning fade in">
+			<button type="button" class="close" data-dismiss="alert" aria-hiddent="true">x</button>
+			<strong>Holy dogma! Matt looks like he's going to explode! Be careful...</strong>
+		</div>
+		::after -->
+
+<div class="container">
+	<div class="col-sm-4" style="margin:0 auto;">
+		<h1>
+		What are YOUR favorite Matt Damon movies?
+		</h1>
+		<form action="/favorites" method="post" style="margin-bottom:25px;">
+		<input type="text" id="title" name="title">
+		<input type="submit">
+		</form>
+		<div style="margin-top:20px; height:5px;"></div>
+		<ul class="list-group">
+			<% @favorites.each do |favorite| %>
+			<li class="list-group-item"><%= favorite %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="../bootstrap.min.js"></script>
+  <script src="../docs.min.js"></script>
+  <script src="../alert.js"></script>
+
+</body>
+</html>
+
+<!-- 
+
+These are html dox
+By using %= we assign the to_do to be displayed
+Using ruby to iterate in the erb coding
+
+-->

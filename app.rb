@@ -1,8 +1,15 @@
 require 'sinatra'
 
 get "/error" do
-	"Error"
 	erb :"favorites/error"
+end
+
+get "/Green_Zone" do
+	erb :"favorites/green_zone"
+end
+
+get "/Ben_Affleck" do
+	erb :"favorites/benaffleck"
 end
 
 get "/favorites" do
@@ -16,8 +23,15 @@ end
 
 post "/favorites" do
 	text = params[:title]
-	Session.add_favorite(text)
-	redirect "/favorites"
+	if text.downcase == "ben affleck"
+		redirect "/Ben_Affleck"
+	elsif text.downcase == "green zone"
+		redirect "/Green_Zone"
+	elsif Session.add_favorite(text)
+		redirect "/favorites"
+	else
+		redirect "/error"
+	end
 end
 
 
@@ -32,7 +46,11 @@ class Session
 	end
 
 	def self.add_favorite(title)
-		@@favorites << title
+		if title.downcase == "green zone"
+			return false
+		else
+			@@favorites << title
+		end
 	end
 
 end

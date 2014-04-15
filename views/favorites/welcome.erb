@@ -33,13 +33,13 @@
               What are YOUR favorite Matt Damon movies?
               </h1>
               <form action="/favorites" method="post" style="margin-bottom:25px;">
-                <input type="text" id="title" name="title" style="color:black;">
+                <input type="text" id="title" name="title">
                 <input type="submit" class="btn btn-success">
               </form>
             <div style="margin-top:20px; height:5px;"></div>
               <ul class="list-group">
                 <% @favorites.each do |favorite| %>
-                <li class="list-group-item" style="color:#333;"><%= favorite %></li>
+                <li class="list-group-item"><%= favorite %></li>
                 <% end %>
               </ul>
          

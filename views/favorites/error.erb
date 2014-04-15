@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,33 +25,16 @@
 
       <div class="site-wrapper-inner">
 
-        <div class="cover-container">
+<div class="container">
 
-            
-              <h1>
-              What are YOUR favorite Matt Damon movies?
-              </h1>
-              <form action="/favorites" method="post" style="margin-bottom:25px;">
-                <input type="text" id="title" name="title" style="color:black;">
-                <input type="submit" class="btn btn-success">
-              </form>
-            <div style="margin-top:20px; height:5px;"></div>
-              <ul class="list-group">
-                <% @favorites.each do |favorite| %>
-                <li class="list-group-item" style="color:#333;"><%= favorite %></li>
-                <% end %>
-              </ul>
-         
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>&copy; Matt Damon Favs, David Hunt 2014</p>
-            </div>
-          </div>
-
-        </div>
-
+      <div class="starter-template">
+        <h1>Well, this isn't supposed to happen.</h1>
+        <p class="lead">We'll try to fix that, and you can go back to try to<a href="/favorites" style="color:blue;"> add that one again.</a></p>
       </div>
+
+    </div><!-- /.container -->
+
+       </div>
 
     </div>
 
