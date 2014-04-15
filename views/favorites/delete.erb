@@ -21,13 +21,14 @@
 
     <div class="container" style="text-align:center">
 
-      <form class="form-signin" role="form" action="/favorites/<%= @favorite.id %>" method="post" style="width:50%; margin:0 auto; margin-bottom:-5px;">
-        <h2 class="form-signin-heading" style="color:white;"><%= @favorite.title %></h2>
-        <input type="hidden" class="form-control" name="_method" value="put" autofocus/>
-        <input type="text" id="favorite_title" name="favorite[title]" placeholder="new title here" class="form-control"  style="margin-bottom:10px;"/>
-        <button class="btn btn-lg btn-success btn-block" type="submit">Save</button>
+      <form class="form-signin" action="/favorites/<%= @favorite.id %>" method="post" role="form" style="width:50%; margin:0 auto;">
+        <h2 class="form-signin-heading" style="color:white;">Delete <%= @favorite.title %>?</h2>
+        <!-- <input type="hidden" class="form-control" name="_method" value="delete" autofocus/> -->
+        <button type="submit" class="btn btn-lg btn-danger btn-block" style="top-margin:-10px; width:46%; float:left; margin-bottom:20px;" name="_method" value="delete">Delete Forever</button>
+        <a href="/favorites/<%= @favorite.id %>"><button type="button" class="btn btn-lg btn-primary btn-block" style="top-margin:-10px; width:46%; float:right; text-decoration:none;">Cancel</button></a>
+        <!-- <a href="/favorites/<%= @favorite.id %>/delete" ><button type="button" class="btn btn-lg btn-danger btn-block" style="top-margin:-10px; width:45%; float:right; margin-bottom:20px;">Delete</button></a> -->
       </form>
-      <a href="/favorites/<%= @favorite.id %>" ><button type="button" class="btn btn-lg btn-primary btn-block" style="top-margin:-10px; width:32%; margin:0 auto;">Cancel</button></a>
+      
 
     </div> <!-- /container -->
 
@@ -40,6 +41,3 @@
     <script src="/js/docs.min.js"></script>
   </body>
 </html>
-
-
-

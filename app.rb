@@ -36,32 +36,30 @@ get '/favorites/:id/edit' do
 	erb :"favorites/edit"
 end
 
+get '/favorites/:id/delete' do
+	@favorite = Favorite.find(params[:id])
+	erb :"favorites/delete"
+end
+
 get '/favorites/:id' do
 	@favorite = Favorite.find(params[:id])
 	erb :"favorites/show"
 end
 
-# post "/favorites" do
-# 	text = params[:title]
-# 	if Favorite.check_for_dupes(text) == true
-# 		redirect "/error"
-# 	elsif Favorite.is_empty(text) == true
-# 		redirect "/error"
-# 	end
-# 	if text.downcase == "ben affleck"
-# 		redirect "/Ben_Affleck"
-# 	elsif text.downcase == "green zone"
-# 		redirect "/Green_Zone"
-# 	elsif Favorite.add_favorite(text)
-# 		redirect "/favorites"
-# 	else
-# 		redirect "/error"
-# 	end
-# end
-
 post "/favorites" do
 	new_favorite = Favorite.new
 	new_favorite.title = params[:title]
+	favorites = Favorite.all 
+	favorites.each do |favorite|
+		if new_favorite.title.downcase == favorite.title.downcase
+			redirect "/error"
+		end
+	end
+	if new_favorite.title.downcase == "ben affleck"
+		redirect "/Ben_Affleck"
+	elsif new_favorite.title.downcase == "green zone"
+		redirect "/Green_Zone"
+	end
 	if new_favorite.save
 		redirect "/favorites"
 	else
