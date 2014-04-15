@@ -21,4 +21,9 @@ describe Session do
 		Session.check_for_dupes(second_favorite).should eq(true)
 	end
 
+	it 'should not accept empty input'do 
+		new_favorite = ""
+		Session.is_empty(new_favorite).should eq(true)
+	end
+
 end
