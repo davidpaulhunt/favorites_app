@@ -1,0 +1,5 @@
+<form action="/favorites/<%= @favorite.id %>" method="post">
+	<input type="hidden" name="_method" value="put" />
+	<input type="text" id="favorite_title" name="favorite[title]" value="<%= @favorite.title %>">
+	<input type="submit">
+</form>
