@@ -16,4 +16,9 @@ describe Session do
 		second_count.should > first_count
 	end
 
+	it 'should say no to dupes' do
+		second_favorite = "Adjustment Bereau"
+		Session.check_for_dupes(second_favorite).should eq(true)
+	end
+
 end

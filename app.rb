@@ -23,6 +23,9 @@ end
 
 post "/favorites" do
 	text = params[:title]
+	if Session.check_for_dupes(text) == true
+		redirect "/error"
+	end
 	if text.downcase == "ben affleck"
 		redirect "/Ben_Affleck"
 	elsif text.downcase == "green zone"
@@ -50,6 +53,16 @@ class Session
 			return false
 		else
 			@@favorites << title
+		end
+	end
+
+	def self.check_for_dupes(title)
+		@@favorites.each do |existing|
+			if existing == title.downcase
+				return true
+			else
+				return false
+			end
 		end
 	end
 
