@@ -6,7 +6,11 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: blue;
+}
+
+h1 {
+  color: white;
 }
 
 /* Custom default button */
@@ -19,6 +23,11 @@ a:hover {
   border: 1px solid #fff;
 }
 
+.middle-img {
+  margin-top: 50px;
+  width: 250px;
+  height: 250px;
+}
 
 /*
  * Base structure
@@ -45,6 +54,7 @@ body {
   min-height: 100%;
   background: url('/mattdamon.jpg');
   background-size: cover;
+  background-color: #333;
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -119,6 +129,9 @@ body {
   background-color: black;
 }
 
+.lead {
+  color: white;
+}
 
 /*
  * Footer

@@ -17,16 +17,14 @@
     <link href="/css/edit.css" rel="stylesheet">
   </head>
 
-  <body style="background-color:#333;">
+  <body>
 
-    <div class="container" style="text-align:center">
+    <div class="container container-center-text">
 
-      <form class="form-signin" action="/favorites/<%= @favorite.id %>" method="post" role="form" style="width:50%; margin:0 auto;">
-        <h2 class="form-signin-heading" style="color:white;">Delete <%= @favorite.title %>?</h2>
-        <!-- <input type="hidden" class="form-control" name="_method" value="delete" autofocus/> -->
-        <button type="submit" class="btn btn-lg btn-danger btn-block" style="top-margin:-10px; width:46%; float:left; margin-bottom:20px;" name="_method" value="delete">Delete Forever</button>
-        <a href="/favorites/<%= @favorite.id %>"><button type="button" class="btn btn-lg btn-primary btn-block" style="top-margin:-10px; width:46%; float:right; text-decoration:none;">Cancel</button></a>
-        <!-- <a href="/favorites/<%= @favorite.id %>/delete" ><button type="button" class="btn btn-lg btn-danger btn-block" style="top-margin:-10px; width:45%; float:right; margin-bottom:20px;">Delete</button></a> -->
+      <form class="form-signin form-delete" action="/favorites/<%= @favorite.id %>" method="post" role="form">
+        <h2 class="form-signin-heading">Delete <%= @favorite.title %>?</h2>
+        <button type="submit" class="btn btn-lg btn-danger btn-block btn-form-left" name="_method" value="delete">Delete Forever</button>
+        <a href="/favorites/<%= @favorite.id %>"><button type="button" class="btn btn-lg btn-primary btn-block btn-form-right">Cancel</button></a>
       </form>
       
 

@@ -1,7 +1,11 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #333;
+}
+
+.container-center-text {
+  text-align: center;
 }
 
 .form-signin {
@@ -9,6 +13,24 @@ body {
   padding: 15px;
   margin: 0 auto;
 }
+
+.form-delete .form-edit {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-edit {
+  margin-bottom: -5px;
+}
+
+.form-input {
+  margin-bottom: 10px;
+}
+
+.form-signin-heading {
+  color: white;
+}
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
@@ -37,6 +59,24 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.btn-form-left {
+  margin-bottom: 20px;
+  width: 46%;
+  float:left;
+}
+
+.btn-form-right {
+  margin-bottom: 20px;
+  width: 46%;
+  float: right;
+  text-decoration: none;
+}
+
+.btn-lg-middle {
+  width: 32%;
+  margin: 0 auto;
 }
 
 a:hover {

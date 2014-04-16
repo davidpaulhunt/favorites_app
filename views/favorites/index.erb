@@ -15,14 +15,14 @@
 
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/bootstrap-theme.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="cover.css">
+    <link rel="stylesheet" type="text/css" href="./css/cover.css">
     <!-- Bootstrap core CSS -->
 
   </head>
 
   <body>
 
-    <div class="site-wrapper" style="background-color:#333;">
+    <div class="site-wrapper dark-background">
 
       <div class="site-wrapper-inner">
 
@@ -33,22 +33,24 @@
               What are YOUR favorite Matt Damon movies?
               </h1>
               
-              <form action="/favorites" method="post" style="margin-bottom:25px;">
-                <input type="text" id="title" name="title" style="color:black;" placeholder="Movie title...">
+              <form action="/favorites" method="post" class="form-new-film">
+                <input type="text" id="title" name="title" class="input-movie-title" placeholder="Movie title...">
                 <input type="submit" class="btn btn-success">
               </form>
+
               <div class="progress">
-                <span style="color:#333">Of all the Matt Damon Movies, you've found <%= @favorites.count %> of 66.</span>
-                 <div class="progress-bar" role="progressbar" aria-valuenow=" <%= @favorites.count %>" aria-valuemin="0" aria-valuemax="66" style="width: <%= @favorites.count * 1.52 %>%; overflow-x:visible; color:#333;"></div>
+                <span style="color:#333">Of all the Matt Damon Movies, you've found <%= @favorites.count %> of <%= Favorite::ALL_MOVIES.count %>.</span>
+                 <div class="progress-bar progress-styling dark-text" role="progressbar" aria-valuenow=" <%= @favorites.count %>" aria-valuemin="0" aria-valuemax="<%= Favorite::ALL_MOVIES.count %>" style="width: <%= @favorites.count * 1.52 %>%;"></div>
               </div>
-              <div style="margin-top:20px; height:5px;"></div>
-              <ul class="list-group" style="max-height:300px; overflow-y:scroll;">
+
+              <div class="div-spacer-vertical"></div>
+              <ul class="list-group list-group-scroll-y">
                 <% if @favorites.count > 0 %>
                   <% @favorites.each do |favorite| %>
-                  <li class="list-group-item" style="color:#333;"><a href="/favorites/<%= favorite.id %>"><%= favorite.title %></a></li>
+                  <li class="list-group-item dark-text"><a href="/favorites/<%= favorite.id %>"><%= favorite.title %></a></li>
                   <% end %>
                 <% else %>
-                  <li class="list-group-item" style="color:#333;">
+                  <li class="list-group-item dark-text">
                     You haven't added any favorites yet...
                   </li>
                 <% end %>

@@ -17,17 +17,16 @@
     <link href="/css/edit.css" rel="stylesheet">
   </head>
 
-  <body style="background-color:#333;">
+  <body>
 
-    <div class="container" style="text-align:center">
+    <div class="container container-center-text">
 
-      <form class="form-signin" role="form" action="/favorites/<%= @favorite.id %>" method="post" style="width:50%; margin:0 auto; margin-bottom:-5px;">
-        <h2 class="form-signin-heading" style="color:white;"><%= @favorite.title %></h2>
-        <input type="hidden" class="form-control" name="_method" value="put" autofocus/>
-        <input type="text" id="favorite_title" name="favorite[title]" placeholder="new title here" class="form-control"  style="margin-bottom:10px;"/>
-        <button class="btn btn-lg btn-success btn-block" type="submit">Save</button>
+      <form class="form-signin form-delete form-edit" role="form" action="/favorites/<%= @favorite.id %>" method="post">
+        <h2 class="form-signin-heading"><%= @favorite.title %></h2>
+        <input type="text" id="favorite_title" name="favorite[title]" placeholder="new title here" class="form-control form-input" />
+        <button class="btn btn-lg btn-success btn-block" type="submit" name="_method" value="put">Save</button>
       </form>
-      <a href="/favorites/<%= @favorite.id %>" ><button type="button" class="btn btn-lg btn-primary btn-block" style="top-margin:-10px; width:32%; margin:0 auto;">Cancel</button></a>
+      <a href="/favorites/<%= @favorite.id %>" ><button type="button" class="btn btn-lg btn-primary btn-block btn-lg-middle">Cancel</button></a>
 
     </div> <!-- /container -->
 

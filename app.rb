@@ -49,6 +49,9 @@ end
 post "/favorites" do
 	new_favorite = Favorite.new
 	new_favorite.title = params[:title]
+	# if new_favorite.check_for_dupes
+	# 	redirect "/error"
+	# end
 	favorites = Favorite.all 
 	favorites.each do |favorite|
 		if new_favorite.title.downcase == favorite.title.downcase
@@ -62,13 +65,13 @@ post "/favorites" do
 			break
 		end
 	end
-	if @damon == false
-		redirect "/error"
-	end
 	if new_favorite.title.downcase == "ben affleck"
 		redirect "/Ben_Affleck"
 	elsif new_favorite.title.downcase == "green zone"
 		redirect "/Green_Zone"
+	end
+	if @damon == false
+		redirect "/error"
 	end
 	if new_favorite.save
 		redirect "/favorites"
@@ -99,6 +102,10 @@ end
 class Favorite < ActiveRecord::Base
 	@@favorites = []
 	ALL_MOVIES = [
+		"Interstellar",
+		"The Monuments Men",
+		"Elysium",
+		"Promised Land",
 		"We Bought a Zoo",
 		"Happy Feet Two",
 		"Margaret",
@@ -158,19 +165,28 @@ class Favorite < ActiveRecord::Base
 		end
 	end
 
-	def self.check_for_dupes(title)
-		@@favorites.each do |existing|
-			if existing.downcase == title.downcase
-				return true
-			end
-		end
-		return false
-	end
-
 	def self.is_empty(title)
 		if title == "" || title == " "
 			return true
 		end
 	end
+
+	
+	# def check_for_dupes
+	# 	favorites = Favorite.all 
+	# 	favorites.each do |favorite|
+	# 		if title.downcase == favorite.title.downcase
+	# 			return true
+	# 		end
+	# 	end
+	# end
+
+	# Favorite::ALL_MOVIES.each do |movie|
+	# 	@damon = false;
+	# 	if new_favorite.title.downcase == movie.downcase
+	# 		@damon = true;
+	# 		break
+	# 	end
+	# end
 
 end

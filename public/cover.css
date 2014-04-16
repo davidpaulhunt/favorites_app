@@ -2,6 +2,11 @@
  * Globals
  */
 
+.form-new-film {
+  margin-bottom: 25px;
+}
+
+
 /* Links */
 a,
 a:focus,
