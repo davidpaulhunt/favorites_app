@@ -55,6 +55,16 @@ post "/favorites" do
 			redirect "/error"
 		end
 	end
+	Favorite::ALL_MOVIES.each do |movie|
+		@damon = false;
+		if new_favorite.title.downcase == movie.downcase
+			@damon = true;
+			break
+		end
+	end
+	if @damon == false
+		redirect "/error"
+	end
 	if new_favorite.title.downcase == "ben affleck"
 		redirect "/Ben_Affleck"
 	elsif new_favorite.title.downcase == "green zone"
@@ -88,6 +98,53 @@ end
 
 class Favorite < ActiveRecord::Base
 	@@favorites = []
+	ALL_MOVIES = [
+		"We Bought a Zoo",
+		"Happy Feet Two",
+		"Margaret",
+		"Contagion",
+		"The Adjustment Bureau",
+		"True Grit",
+		"Hereafter",
+		"Green Zone",
+		"Invictus",
+		"The Informant!",
+		"Ponyo",
+		"Che: Part Two",
+		"The Bourne Ultimatum",
+		"Ocean's Thirteen",
+		"The Good Shepherd",
+		"The Departed",
+		"Syriana",
+		"The Brothers Grimm",
+		"Ocean's Twelve",
+		"The Bourne Supremacy",
+		"Jersey Girl",
+		"EuroTrip",
+		"Stuck on You",
+		"The Bourne Identity",
+		"Confessions of a Dangerous Mind",
+		"Spirit: Stallion of the Cimarron",
+		"Gerry",
+		"The Majestic",
+		"Ocean's Eleven",
+		"All the Pretty Horses",
+		"Finding Forrester",
+		"The Legend of Bagger Vance",
+		"Titan A.E.",
+		"The Talented Mr. Ripley",
+		"Dogma",
+		"Rounders",
+		"Saving Private Ryan",
+		"Good Will Hunting",
+		"The Rainmaker ",
+		"Chasing Amy",
+		"Courage Under Fire",
+		"Glory Daze",
+		"Geronimo: An American Legend",
+		"School Ties",
+		"Mystic Pizza"
+	]
 
 	def self.favorites
 		@@favorites
