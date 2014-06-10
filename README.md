@@ -1,4 +1,4 @@
-favorites_app
+Favorite Matt Damon Movies
 =============
 
 ## ABOUT
@@ -27,7 +27,7 @@ Run your local server.
 
 ## Tests
 
-We haven't written any tests, yet.
+Tests are run using rspec.
 
 ## Contributing
 
