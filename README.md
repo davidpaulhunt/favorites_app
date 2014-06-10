@@ -3,7 +3,13 @@ favorites_app
 
 ## ABOUT
 
-A funny, simple webapp for saving your favorite Matt Damon movies. 
+A funny, simple webapp for saving your favorite Matt Damon movies.
+
+### CSS/JS
+
+This app is my first attempt at truly using bootstrap's css/js files well. You'll find decent styling and the use of js to display progress.
+
+Bootstrap is used via actual files and not a gem.
 
 ## Installation / Setup
 
